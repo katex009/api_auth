@@ -42,12 +42,20 @@ INSTALLED_APPS = [
     'posts.apps.PostsConfig',
     #terceros
     'rest_framework',
+    'drf_spectacular',
 ]
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
-    ]
+    ],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Django Project',
+    'DESCRIPTION': 'Django project API',
+    'VERSION': '1.0.0',
 }
 
 MIDDLEWARE = [
